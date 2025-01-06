@@ -157,7 +157,7 @@ def Hyperparameter_Optimization(Exp_dir, classes, train_loader, valid_loader, mo
          
             valid_preds, valid_labels = Performance_metrics.get_all_preds(model, valid_loader, device)
             valid_metrics, valid_dums = Performance_metrics.get_performance_metrics(classes, valid_labels, valid_preds)
-            mcc_valid = train_metrics.loc['mcc'][0]
+            mcc_valid = valid_metrics.loc['mcc'][0]
             print('Validation MCC: ', format(mcc_valid, '.4f'))
             
             Evs.append(mcc_valid)
